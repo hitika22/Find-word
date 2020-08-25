@@ -7,10 +7,12 @@ echo -n "enter word you want to find : "
 read word
 totalCount=0
 count=0
+echo
+IFS=$'\n'
 for file in `find ./| grep .txt`
 do
   count=0
-
+  unset IFS
   while IFS= read -r line
   do
     for word1 in $line
@@ -24,4 +26,5 @@ do
   done < "$file"
   echo "Number of occurance of \""$word"\" found in  FILE : "$file" is : $count"
 done
+echo
 echo "Total number of occurance of \""$word"\" in the directory \""$dir"\" is : "$totalCount
