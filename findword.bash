@@ -9,11 +9,11 @@ totalCount=0
 count=0
 echo
 IFS=$'\n'
-for file in `find ./| grep .txt`
+for file in `find ./| grep "\\.txt$"`
 do
   count=0
   unset IFS
-  while IFS= read -r line
+  while read line || [ -n "$line" ];
   do
     for word1 in $line
     do
