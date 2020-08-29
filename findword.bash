@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -n "enter directory you want to find a word : "
+echo -n "enter directory(or relative path of directory) in which you want to find a word : "
 read dir
 cd ./"$dir" || exit
 echo -n "enter word you want to find : "
